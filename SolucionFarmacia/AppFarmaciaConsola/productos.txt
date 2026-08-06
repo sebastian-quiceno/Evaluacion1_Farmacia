@@ -1,0 +1,4 @@
+Capsula;MED001;Acetaminofen;1500;100;10;2027-12-31;Bayer;Gel
+Liquido;MED002;Jarabe Tos;12500;50;5;2026-10-15;Mk;Vidrio;120
+Retail;RET001;Helado Vainilla;3500;20;5
+Servicio;SRV001;Inyectologia;5000

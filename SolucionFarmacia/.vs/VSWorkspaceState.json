@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BibFarmacia",
+    "\\BibFarmacia\\bin\\Debug\\net8.0",
+    "\\BibFarmacia\\Domain",
+    "\\BibFarmacia\\Domain\\Enums",
+    "\\BibFarmacia\\Domain\\Eventos",
+    "\\BibFarmacia\\Domain\\Interfaces",
+    "\\BibFarmacia\\Infrastructure",
+    "\\BibFarmacia\\Infrastructure\\EstrategiasDescuento",
+    "\\BibFarmacia\\Infrastructure\\Repositorios"
+  ],
+  "SelectedNode": "\\BibFarmacia\\Infrastructure\\Repositorios\\RepositorioClienteTxt.cs",
+  "PreviewInSolutionExplorer": false
+}
