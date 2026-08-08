@@ -10,6 +10,7 @@ namespace BibFarmacia.Domain.Entidades
         {
         }
 
+        //Se deberia sobrescribir toString(), esta quemando el retorno
         public override void MostrarInformacion()
         {
             base.MostrarInformacion();

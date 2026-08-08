@@ -14,6 +14,7 @@ namespace BibFarmacia.Domain.Entidades
             FechaVencimiento = fechaVencimiento;
         }
 
+        //Se debe retornar el string, no un console writeline
         public override void MostrarInformacion()
         {
             base.MostrarInformacion();
