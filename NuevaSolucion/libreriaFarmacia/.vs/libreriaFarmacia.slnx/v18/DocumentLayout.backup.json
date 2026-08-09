@@ -1,0 +1,168 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\aplication\\asociacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:aplication\\asociacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\aplication\\movimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:aplication\\movimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\aplication\\detallemovimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:aplication\\detallemovimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\aplication\\prestacionfarmaceuticaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:aplication\\prestacionfarmaceuticaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\aplication\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:aplication\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\aplication\\companiaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:aplication\\companiaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\domain\\repositorios\\icompaniarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:domain\\repositorios\\icompaniarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|c:\\users\\quice\\documents\\arqu soft\\evaluacion1_farmacia\\nuevasolucion\\libreriafarmacia\\aplication\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8B598E-3244-7DBB-47C5-8EA2E85CBF0B}|libreriaFarmacia.csproj|solutionrelative:aplication\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AsociacionService.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\AsociacionService.cs",
+              "RelativeDocumentMoniker": "aplication\\AsociacionService.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\AsociacionService.cs",
+              "RelativeToolTip": "aplication\\AsociacionService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T06:05:35.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovimientoService.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\MovimientoService.cs",
+              "RelativeDocumentMoniker": "aplication\\MovimientoService.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\MovimientoService.cs",
+              "RelativeToolTip": "aplication\\MovimientoService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T06:03:31.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DetalleMovimientoService.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\DetalleMovimientoService.cs",
+              "RelativeDocumentMoniker": "aplication\\DetalleMovimientoService.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\DetalleMovimientoService.cs",
+              "RelativeToolTip": "aplication\\DetalleMovimientoService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwB4AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T06:01:19.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrestacionFarmaceuticaService.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\PrestacionFarmaceuticaService.cs",
+              "RelativeDocumentMoniker": "aplication\\PrestacionFarmaceuticaService.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\PrestacionFarmaceuticaService.cs",
+              "RelativeToolTip": "aplication\\PrestacionFarmaceuticaService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T05:40:20.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductoService.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\ProductoService.cs",
+              "RelativeDocumentMoniker": "aplication\\ProductoService.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\ProductoService.cs",
+              "RelativeToolTip": "aplication\\ProductoService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T05:38:38.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ICompaniaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\domain\\repositorios\\ICompaniaRepository.cs",
+              "RelativeDocumentMoniker": "domain\\repositorios\\ICompaniaRepository.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\domain\\repositorios\\ICompaniaRepository.cs",
+              "RelativeToolTip": "domain\\repositorios\\ICompaniaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T05:31:33.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CompaniaService.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\CompaniaService.cs",
+              "RelativeDocumentMoniker": "aplication\\CompaniaService.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\CompaniaService.cs",
+              "RelativeToolTip": "aplication\\CompaniaService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T05:30:59.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\ClienteService.cs",
+              "RelativeDocumentMoniker": "aplication\\ClienteService.cs",
+              "ToolTip": "C:\\Users\\quice\\Documents\\Arqu Soft\\Evaluacion1_Farmacia\\NuevaSolucion\\libreriaFarmacia\\aplication\\ClienteService.cs",
+              "RelativeToolTip": "aplication\\ClienteService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T04:58:39.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
