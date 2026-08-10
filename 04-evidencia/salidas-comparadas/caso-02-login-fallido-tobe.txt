@@ -1,0 +1,10 @@
+Cargando información del sistema...
+
+Productos cargados
+Clientes cargados
+Usuarios cargados
+Servicios médicos cargados
+
+=========== LOGIN ===========
+Usuario: Contraseña: 
+Acceso denegado

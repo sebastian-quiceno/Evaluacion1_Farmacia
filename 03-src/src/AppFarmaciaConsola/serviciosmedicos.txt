@@ -1,0 +1,4 @@
+SM01;Inyectologia;8000
+SM02;Cambio de vendajes;12000
+SM03;Curacion basica;10000
+SM04;Toma de tension arterial;5000

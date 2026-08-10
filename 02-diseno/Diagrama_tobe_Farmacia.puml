@@ -1,0 +1,372 @@
+@startuml UML-Mejorado
+
+skinparam classAttributeIconSize 0
+skinparam wrapWidth 250
+hide empty members
+
+title Sistema FARMACIA — Diagrama TO-BE (Fase 3)\n<size:12>Negro = conservado del AS-IS · Color = elemento intervenido, un color por principio SOLID aplicado</size>
+
+' =====================================================================
+' CONVENCIÓN DE COLOR (A.6 punto 1)
+'   Negro  -> se conserva del diseño original, sin cambios de forma
+'   Azul   -> ISP (Interface Segregation)
+'   Rojo   -> LSP (Liskov Substitution)
+'   Morado -> OCP (Open/Closed)
+'   Naranja-> SRP (Single Responsibility)
+'   Verde  -> DIP (Dependency Inversion)
+' =====================================================================
+
+' ===================== Interfaces (ISP) =====================
+interface IVendible #74C0FC {
+  codigo : string
+  nombre : string
+  precio : decimal
+  MostrarInformacion() : void
+}
+
+interface IControlableEnInventario #74C0FC {
+  stock : int
+  stockMinimo : int
+  DeducirStock(cantidad : int) : void
+  TieneStockSuficiente(cantidad : int) : bool
+  EstaEnStockMinimo() : bool
+}
+
+interface IPerecedero #74C0FC {
+  fechaVencimiento : DateTime
+  EstaProximoAVencer(dias : int) : bool
+}
+
+' ===================== DIP: abstracción de notificación (Punto de Dolor #3) =====================
+' Los servicios ya no dependen de clases concretas de infraestructura
+' (antes: -eventoStock : EventoStockMinimo, etc.). Dependen de esta
+' abstracción; el composition root inyecta la implementación concreta.
+interface INotificador #69DB7C {
+  Notificar(mensaje : string, tipo : TipoNotificacion) : void
+}
+
+class NotificadorConsola #69DB7C {
+  +Notificar(mensaje : string, tipo : TipoNotificacion) : void
+}
+
+enum TipoNotificacion #69DB7C {
+  StockMinimo
+  Vencimiento
+  PuntosAcumulados
+  MovimientoRegistrado
+}
+
+' ===================== Enums conservados =====================
+enum TipoRelleno {
+  Gel
+  Polvo
+}
+
+enum MaterialEnvase {
+  Vidrio
+  Plastico
+}
+' ===================== Dominio: Productos =====================
+abstract class ProductoBase #74C0FC {
+  #codigo : string
+  #nombre : string
+  #precio : decimal
+  #stock : int
+  #stockMinimo : int
+  +ProductoBase(codigo, nombre, precio, stock, stockMinimo)
+  +{abstract} MostrarInformacion() : void
+  +DeducirStock(cantidad : int) : void
+  +TieneStockSuficiente(cantidad : int) : bool
+  +EstaEnStockMinimo() : bool
+}
+
+class ArticuloRetail #FF8787 {
+    -codigo: string
+    -nombre: string
+    -precio: decimal
+    -stock : int
+    -stockMinimo : int
+  +ArticuloRetail(codigo, nombre, precio, stock, stockMinimo, fechaVencimiento)
+  +MostrarInformacion() : void
+  +EstaProximoAVencer(dias : int) : bool
+}
+
+class ServicioMedico #74C0FC {
+  -nombre
+  -precio
+  +ServicioMedico(codigo, nombre, precio)
+  +MostrarInformacion() : void
+}
+
+abstract class Medicamento #FF8787 {
+  #codigo : string
+  #nombre : string
+  #precio : decimal
+  #stock : int
+  #stockMinimo : int
+  #laboratorio : Laboratorio
+  #fechaVencimiento : DateTime
+  +Medicamento(codigo, nombre, precio, stock, stockMinimo, laboratorio, fechaVencimiento)
+  +MostrarInformacion() : void
+  +EstaProximoAVencer(dias : int) : bool
+}
+
+' MedicamentoCapsula y MedicamentoLiquido NO redefinen MostrarInformacion():
+' en el AS-IS ninguna de las dos lo hacía (heredan la implementación que
+' hoy vive en Producto y que en el TO-BE se reubica en Medicamento). Repetir
+' aquí la operación habría sido una redefinición no autorizada por A.1.1.
+class MedicamentoCapsula {
+  -codigo : string
+  -nombre : string
+  -precio : decimal
+  -stock : int
+  -stockMinimo : int
+  -laboratorio : Laboratorio
+  -fechaVencimiento : DateTime
+  -tipoRelleno : TipoRelleno
+  +MedicamentoCapsula(..., tipoRelleno)
+}
+
+class MedicamentoLiquido {
+  -codigo : string
+  -nombre : string
+  -precio : decimal
+  -stock : int
+  -stockMinimo : int
+  -laboratorio : Laboratorio
+  -materialEnvase : MaterialEnvase
+  -mililitros : int
+  +MedicamentoLiquido(..., materialEnvase, mililitros)
+}
+
+class Laboratorio {
+  -nombre : string
+  -direccion : string
+  -telefono : string
+  +Laboratorio(nombre, direccion, telefono)
+}
+
+' ===================== Dominio: Personas =====================
+abstract class Persona {
+  #nombre : string
+  #cedula : string
+  #telefono : string
+  #correo : string
+  +Persona(nombre, cedula, telefono, correo)
+}
+
+class Cliente #FFA94D {
+  -nombre : string
+  -cedula : string
+  -telefono : string
+  -correo : string
+  -puntos : int
+  -convenio : Convenio
+  +Cliente(nombre, cedula, telefono, correo, convenio)
+  +AcumularPuntos(puntos : int) : void
+}
+
+class Usuario {
+  -nombre : string
+  -cedula : string
+  -telefono : string
+  -correo : string
+  -usuario : string
+  -contrasena : string
+  +Usuario(nombre, cedula, telefono, correo, usuario, contrasena)
+}
+
+' ===================== OCP: Convenios (SC-3, sin patrón Strategy) =====================
+' Cada Convenio representa una relación de negocio real (empresa, banco,
+' universidad...). Descuento y crédito son dos reglas de esa misma relación,
+' no dos conceptos separados: por eso viven en la misma clase de dominio.
+abstract class Convenio #B197FC {
+  #nombreConvenio : string
+  +{abstract} CalcularDescuento(subtotal : decimal) : decimal
+}
+
+class SinConvenio #B197FC {
+  -nombreConvenio : string
+  +CalcularDescuento(subtotal : decimal) : decimal
+
+}
+
+class ConvenioUniversidad #B197FC {
+  -nombreConvenio : string
+  +CalcularDescuento(subtotal : decimal) : decimal
+}
+
+class ConvenioEmpresa #B197FC {
+  -nombreConvenio : string
+  +CalcularDescuento(subtotal : decimal) : decimal
+}
+
+' ===================== SRP: Dominio de Venta =====================
+class LineaDeVenta #FFA94D {
+  -articulo : IVendible
+  -cantidad : int
+  +LineaDeVenta(articulo : IVendible, cantidad : int)
+  +CalcularSubtotal() : decimal
+}
+
+class CestaDeCompra #FFA94D {
+  -lineas : List<LineaDeVenta>
+  +AgregarArticulo(articulo : IVendible, cantidad : int) : void
+  +ObtenerLineas() : List<LineaDeVenta>
+  +CalcularSubtotal() : decimal
+  +Vaciar() : void
+}
+
+class Movimiento #74C0FC {
+  -fecha : DateTime
+  -cantidad : int
+  -tipo : string
+  -articulo : IVendible
+  +Movimiento(fecha, cantidad, tipo, articulo)
+}
+
+class EventoVentaProcesada <<Evento>> #FFA94D {
+  -lineas : List<LineaDeVenta>
+  -fechaVenta : DateTime
+  +EventoVentaProcesada(lineas : List<LineaDeVenta>)
+}
+
+class CasodeUsoProcesarVenta <<CasoDeUso>> #FFA94D {
+  -VentaProcesada : event DelegadoVenta
+  +EjecutarVenta(cesta : CestaDeCompra, cliente : Cliente) : decimal
+}
+
+
+' ===================== SRP: Servicios (persistencia directa a archivo, sin Repository) =====================
+class GestorInventario <<Servicio>> #FFA94D {
+  -productos : List<ProductoBase>
+  -notificador : INotificador
+  +CargarDesdeArchivo(ruta : string) : string
+  +ObtenerProductos() : List<ProductoBase>
+  +VerificarStock() : void
+  +VerificarVencimiento() : void
+  +AlProcesarVenta(evento : EventoVentaProcesada) : void
+}
+
+class GestorServiciosMedicos <<Servicio>> #FFA94D {
+  -serviciosMedicos : List<ServicioMedico>
+  +CargarDesdeArchivo(ruta : string) : string
+  +ObtenerServiciosMedicos() : List<ServicioMedico>
+}
+
+class ClienteService <<Servicio>> #FFA94D {
+  -clientes : List<Cliente>
+  -notificador : INotificador
+  +Cargar(ruta : string) : string
+  +ObtenerClientes() : List<Cliente>
+  +AcumularPuntos(cliente : Cliente, puntos : int) : void
+}
+
+class UsuarioService <<Servicio>> #FFA94D {
+  -usuarios : List<Usuario>
+  +Cargar(ruta : string) : string
+  +ObtenerUsuarios() : List<Usuario>
+  +Login(user : string, password : string) : bool
+}
+
+class MovimientoService <<Servicio>> #FFA94D {
+  -movimientos : List<Movimiento>
+  -notificador : INotificador
+  +RegistrarMovimiento(movimiento : Movimiento) : void
+  +ObtenerMovimientos() : List<Movimiento>
+  +AlProcesarVenta(evento : EventoVentaProcesada) : void
+}
+
+' ===================== SRP: Composition Root (A.6 punto 4) =====================
+' Único punto del programa donde se construyen e inyectan los objetos.
+' Program ya NO conoce el menú: separa la orquestación de arranque (esto)
+' de la interacción con el usuario (MenuConsola), cerrando por completo
+' el Punto de Dolor #1 (antes, un único Program.cs hacía las dos cosas).
+class Program <<CompositionRoot>> #FFA94D {
+  +{static} Main(args : string[]) : void
+  -ConstruirDependencias() : void
+  -SuscribirManejadoresDeEventos() : void
+}
+
+class MenuConsola #FFA94D {
+  +Ejecutar() : void
+}
+
+' ===================== Relaciones: herencia =====================
+Persona <|-- Cliente
+Persona <|-- Usuario
+ProductoBase <|-- ArticuloRetail
+ProductoBase <|-- Medicamento
+Medicamento <|-- MedicamentoCapsula
+Medicamento <|-- MedicamentoLiquido
+Convenio <|-- SinConvenio
+Convenio <|-- ConvenioUniversidad
+Convenio <|-- ConvenioEmpresa
+
+' ===================== Relaciones: realización =====================
+IVendible <|.. ProductoBase
+IControlableEnInventario <|.. ProductoBase
+IVendible <|.. ServicioMedico
+IPerecedero <|.. Medicamento
+IPerecedero <|.. ArticuloRetail
+INotificador <|.. NotificadorConsola
+
+' ===================== Relaciones: dependencia de notificación =====================
+INotificador ..> TipoNotificacion : usa
+
+' ===================== Relaciones: asociación (multiplicidad en ambos extremos) =====================
+Medicamento "1" --> "1" Laboratorio : tiene un
+Cliente "1" --> "1" Convenio : tiene una
+LineaDeVenta "*" --> "1" IVendible : referencia
+CestaDeCompra "1" --> "*" LineaDeVenta : compuesta por
+EventoVentaProcesada "1" --> "*" LineaDeVenta : transporta
+Movimiento "*" --> "1" IVendible : referencia
+MedicamentoCapsula "1" --> "1" TipoRelleno : contiene
+MedicamentoLiquido "1" --> "1" MaterialEnvase : contiene
+GestorInventario "1" --> "*" ProductoBase : tiene
+GestorInventario "1" --> "1" INotificador : notifica con
+GestorServiciosMedicos "1" --> "*" ServicioMedico : tiene
+ClienteService "1" --> "*" Cliente : tiene
+ClienteService "1" --> "1" INotificador : notifica con
+UsuarioService "1" --> "*" Usuario : tiene
+MovimientoService "1" --> "*" Movimiento : tiene
+MovimientoService "1" --> "1" INotificador : notifica con
+
+' ===================== Relaciones: dependencia =====================
+CasodeUsoProcesarVenta ..> CestaDeCompra : depende de
+CasodeUsoProcesarVenta ..> Cliente : depende de
+CasodeUsoProcesarVenta ..> Convenio : calcula descuento con
+CasodeUsoProcesarVenta ..> EventoVentaProcesada : dispara
+GestorInventario ..> EventoVentaProcesada : escucha a
+MovimientoService ..> EventoVentaProcesada : escucha a
+
+' ===================== MenuConsola: recorre los escenarios de uso (A.7 punto 2) =====================
+MenuConsola ..> UsuarioService : depende de
+MenuConsola ..> GestorInventario : depende de
+MenuConsola ..> GestorServiciosMedicos : depende de
+MenuConsola ..> ClienteService : depende de
+MenuConsola ..> CasodeUsoProcesarVenta : depende de
+
+' ===================== Composition Root: construye e inyecta =====================
+Program ..> MenuConsola : construye
+Program ..> NotificadorConsola : construye
+Program ..> GestorInventario : construye
+Program ..> GestorServiciosMedicos : construye
+Program ..> ClienteService : construye
+Program ..> UsuarioService : construye
+Program ..> MovimientoService : construye
+
+' =====================================================================
+' LEYENDA
+' =====================================================================
+legend right
+  |= Color |= Principio / significado |
+  |<back:74C0FC>    | ISP — Interface Segregation |
+  |<back:FF8787>    | LSP — Liskov Substitution |
+  |<back:B197FC>    | OCP — Open/Closed |
+  |<back:FFA94D>    | SRP — Single Responsibility |
+  |<back:69DB7C>    | DIP — Dependency Inversion |
+  |<back:FFFFFF>    | Conservado del AS-IS (sin intervenir) |
+endlegend
+
+@enduml
