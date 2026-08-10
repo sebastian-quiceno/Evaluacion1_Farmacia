@@ -1,11 +1,5 @@
 # Bitácora de uso de IA (A.7.5)
 
-> **Requisito cubierto:** A.7.5 — registro de consultas relevantes con tres columnas (qué propuso la herramienta,
-> qué decidió el equipo, con qué argumento). *"Se evalúa la calidad del juicio, no la cantidad de registros"* — por
-> eso esta bitácora prioriza decisiones reales con consecuencia sobre el diseño, no cada intercambio de la
-> conversación. Cubre las cuatro fases (Fase 1 a Fase 4), tal como exige Parte C, instrucción 10, de
-> `CONTEXTO-RETO-FARMACIA.md`.
-
 | # | Qué propuso la herramienta | Qué decidió el equipo | Con qué argumento |
 |---|---|---|---|
 | 1 | Al auditar `InventarioDeHallazgos.xlsx`, marcar "cero multiplicidades en las asociaciones del `.dia`" como hallazgo. | **Rechazado.** | Verificación directa del XML del `.dia` mostró que 10 de las 12 asociaciones sí tenían multiplicidad declarada; lo que faltaba era el *rol*, no la multiplicidad. Habría sido una refutación defendida con un argumento incorrecto frente al comité (ver `CONTEXTO-RETO-FARMACIA.md`, B.6). |

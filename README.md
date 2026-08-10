@@ -11,6 +11,7 @@
 
 ## Enlace al video
 
+https://www.youtube.com/watch?v=FgLQRvQbLxk
 
 
 ## Estructura del entregable
