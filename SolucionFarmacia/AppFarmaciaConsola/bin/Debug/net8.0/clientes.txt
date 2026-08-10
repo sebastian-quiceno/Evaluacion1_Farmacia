@@ -1,3 +1,0 @@
-Juan Perez;123456789;3001234567;juan@correo.com;Ninguno
-Maria Gomez;987654321;3109876543;maria@empresa.com;Empresa
-Carlos Ruiz;112233445;3201122334;carlos@uni.edu;Universidad

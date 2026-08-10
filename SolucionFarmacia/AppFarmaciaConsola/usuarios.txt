@@ -1,2 +1,0 @@
-Admin;101010;300000;admin@farmacia.com;admin;admin123
-Cajero1;202020;300001;cajero@farmacia.com;cajero;caja123
