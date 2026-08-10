@@ -1,4 +1,4 @@
-# Artefactos de compilación .NET (se regeneran con `dotnet build`, no hacen falta en la entrega)
+# Artefactos de compilación .NET
 bin/
 obj/
 
@@ -7,13 +7,13 @@ obj/
 *.user
 *.suo
 
-# Configuración local de Claude Code (específica de esta máquina, no del proyecto)
+# Configuración local de Claude Code
 .claude/
 
-# Backups de editores (p. ej. Dia deja archivos "archivo.dia~")
+# Backups de editores
 *~
 *.bak
 
-# Basura de sistema operativo
+# Basura del sistema operativo
 .DS_Store
 Thumbs.db
